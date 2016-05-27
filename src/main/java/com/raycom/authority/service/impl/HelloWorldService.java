@@ -10,4 +10,9 @@ public class HelloWorldService implements IHelloWorldService {
     public void sayHello() {
         System.out.println("================== Hello World!");
     }
+
+    @Override
+    public void sayBefore(String param) {
+        System.out.println("================== say: " + param);
+    }
 }

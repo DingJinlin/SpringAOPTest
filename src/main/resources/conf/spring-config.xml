@@ -12,10 +12,11 @@
     <bean id="aspect" class="com.raycom.authority.aop.HelloWorldAspect"/>
 
     <aop:config>
-        <aop:pointcut id="pointcut" expression="execution(* com.raycom..*.*(..))"/>
         <aop:aspect ref="aspect">
+            <aop:pointcut id="pointcut" expression="execution(* com.raycom..*.*(..))"/>
+            <aop:before pointcut="execution(* com.raycom..*.sayBefore(..)) and args(param)" method="beforeAdvice(java.lang.String)"/>
             <aop:before pointcut-ref="pointcut" method="beforeAdvice"/>
-            <aop:after pointcut="execution(* com.raycom..*.*(..))" method="afterFinallyAdvice"/>
+            <aop:after pointcut-ref="pointcut" method="afterFinallyAdvice"/>
         </aop:aspect>
     </aop:config>
 </beans>

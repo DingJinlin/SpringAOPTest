@@ -11,9 +11,9 @@
     <properties>
         <project.charset>UTF-8</project.charset>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!--<maven.compiler.source>7</maven.compiler.source>-->
-        <!--<maven.compiler.target>7</maven.compiler.target>-->
-        <!--<maven.compiler.compilerVersion>7</maven.compiler.compilerVersion>-->
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.compilerVersion>8</maven.compiler.compilerVersion>
         <spring.version>4.2.6.RELEASE</spring.version>
         <aspectjrt.version>1.8.9</aspectjrt.version>
     </properties>
@@ -86,9 +86,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <!--<source>${maven.compiler.source}</source>-->
-                    <!--<target>${maven.compiler.target}</target>-->
-                    <!--<compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>-->
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>

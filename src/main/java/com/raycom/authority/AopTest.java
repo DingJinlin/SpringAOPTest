@@ -12,5 +12,6 @@ public class AopTest {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("conf/spring-config.xml");
         IHelloWorldService helloWorldService = ctx.getBean("helloWorldService", IHelloWorldService.class);
         helloWorldService.sayHello();
+        helloWorldService.sayBefore("before");
     }
 }
