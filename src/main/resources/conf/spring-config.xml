@@ -7,16 +7,45 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/aop
        http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <aop:aspectj-autoproxy/>
 
     <bean id="helloWorldService" class="com.raycom.authority.service.impl.HelloWorldService"/>
+    <bean id="introductionService" class="com.raycom.authority.service.impl.IntroductionService"/>
     <bean id="aspect" class="com.raycom.authority.aop.HelloWorldAspect"/>
 
-    <aop:config>
-        <aop:aspect ref="aspect">
-            <aop:pointcut id="pointcut" expression="execution(* com.raycom..*.*(..))"/>
-            <aop:before pointcut="execution(* com.raycom..*.sayBefore(..)) and args(param)" method="beforeAdvice(java.lang.String)"/>
-            <aop:before pointcut-ref="pointcut" method="beforeAdvice"/>
-            <aop:after pointcut-ref="pointcut" method="afterFinallyAdvice"/>
-        </aop:aspect>
-    </aop:config>
+    <!--<aop:config>-->
+        <!--<aop:aspect ref="aspect">-->
+            <!--<aop:pointcut id="pointcut"-->
+                          <!--expression="execution(* com.raycom..*.*(..))"/>-->
+
+            <!--<aop:before pointcut-ref="pointcut"-->
+                        <!--method="beforeAdvice"/>-->
+
+            <!--<aop:before pointcut="execution(* com.raycom..*.sayBefore(..)) and args(param)"-->
+                        <!--method="beforeAdvice(java.lang.String)"-->
+                        <!--arg-names="param"/>-->
+
+            <!--<aop:after-returning pointcut="execution(* com.raycom..*.sayAfterReturning(..))"-->
+                                 <!--method="afterReturningAdvice"-->
+                                 <!--arg-names="retVal"-->
+                                 <!--returning="retVal"/>-->
+
+            <!--<aop:after-throwing pointcut="execution(* com.raycom..*.sayAfterThrowing(..))"-->
+                                 <!--method="afterThrowingAdvice"-->
+                                 <!--arg-names="e"-->
+                                 <!--throwing="e"/>-->
+
+            <!--<aop:after pointcut="execution(* com.raycom..*.sayAfterFinally(..))"-->
+                       <!--method="afterFinallyAdvice"/>-->
+
+            <!--<aop:around pointcut="execution(* com.raycom..*.sayAround(..))"-->
+                       <!--method="aroundAdvice"/>-->
+
+            <!--<aop:declare-parents types-matching="* com.raycom..*.IHelloWordService+"-->
+                                 <!--implement-interface="com.raycom.authority.service.IIntroductionService"-->
+                                 <!--default-impl="com.raycom.authority.service.impl.IntroductionService"/>-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+
+
 </beans>
